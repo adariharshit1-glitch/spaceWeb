@@ -1,0 +1,440 @@
+.contactSection {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #000;
+  color: white;
+  padding: 40px 60px 60px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* GLOW */
+.bgGlow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top, rgba(255,255,255,0.06), transparent 40%),
+    radial-gradient(circle at bottom, rgba(255,255,255,0.04), transparent 40%);
+  pointer-events: none;
+}
+
+/* HERO */
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* TITLES */
+.headingBox {
+  text-align: center;
+  z-index: 5;
+  margin-top: 30px;
+}
+
+.smallTitle {
+  font-size: 14px;
+  letter-spacing: 8px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 18px;
+}
+
+.mainTitle {
+  font-size: 72px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  margin-bottom: 18px;
+}
+
+.subTitle {
+  font-size: 18px;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 2px;
+}
+
+/* SIGNAL */
+.signalWrapper {
+  position: relative;
+  width: 80%;
+  max-width: 1100px;
+  margin-top: 30px;
+}
+
+.signalImage{
+  width:100%;
+  height:auto;
+  opacity:.55;
+  filter:brightness(.9);
+}
+
+/* MOVING DOT + SHORT TAIL */
+
+.transmitBeam{
+  position:absolute;
+  top:46.8%;
+  left:0%;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:#fff;
+  transform:translate(-50%, -50%);
+  box-shadow:
+    0 0 8px #fff,
+    0 0 18px rgba(255,255,255,.9);
+  animation: beam 4s linear infinite;
+}
+
+/* TAIL */
+
+.transmitBeam::before{
+  content:"";
+  position:absolute;
+
+  top:50%;
+  right:100%;
+  width:70px;
+  height:2px;
+  transform:translateY(-50%);
+
+  background:linear-gradient(
+    to left,
+    rgba(255,255,255,.8),
+    transparent
+  );
+
+  border-radius:15px;
+}
+
+/* ANIMATION */
+
+@keyframes beam{
+  0%{
+    left:0%;
+    opacity:0;
+  }
+  10%{
+    opacity:0.5;
+  }
+  40%{
+    left:40%;
+    opacity:1;
+  }
+  100%{
+    left:100%;
+    opacity:0;
+  }
+}
+/* ASTRONAUT */
+.astronaut {
+  position: absolute;
+  left: 2%;
+  top: 10px;
+  width: 240px;
+  z-index: 2;
+}
+
+.astronaut img {
+  width: 100%;
+  height: auto;
+}
+
+/* EARTH */
+.earth {
+  position: absolute;
+  right: 2%;
+  top: 0;
+  width: 290px;
+  z-index: 2;
+}
+
+.earth img {
+  width: 100%;
+  height: auto;
+}
+
+/* MAIN GRID */
+.contentGrid {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: start;
+  gap: 40px;
+}
+
+/* LEFT INFO */
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.infoSection h3 {
+  font-size: 28px;
+  letter-spacing: 7px;
+  font-weight: 300;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: rgba(255,255,255,0.8);
+  font-size: 18px;
+}
+
+/* FORM */
+.formCard {
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 24px;
+  padding: 40px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 0 30px rgba(255,255,255,0.05),
+    inset 0 0 20px rgba(255,255,255,0.03);
+}
+
+.formCard h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 34px;
+  letter-spacing: 6px;
+  font-weight: 300;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.inputBox,
+.textAreaBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
+
+  padding: 16px 18px;
+  margin-bottom: 18px;
+
+  background: rgba(255,255,255,0.02);
+}
+
+.inputBox input,
+.textAreaBox textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+}
+
+.textAreaBox {
+  align-items: flex-start;
+}
+
+.textAreaBox textarea {
+  min-height: 140px;
+  resize: none;
+}
+
+/* BUTTON */
+.sendBtn {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.04);
+
+  color: white;
+  padding: 18px;
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  font-size: 16px;
+  letter-spacing: 5px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.sendBtn:hover {
+  background: white;
+  color: black;
+  box-shadow: 0 0 20px rgba(255,255,255,0.4);
+}
+
+/* SOCIALS */
+.socialSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.socialSection h3 {
+  font-size: 28px;
+  letter-spacing: 5px;
+  font-weight: 300;
+}
+
+.socialIcons {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.socialIcons a {
+  width: 65px;
+  height: 65px;
+
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 24px;
+
+  transition: 0.3s;
+}
+
+.socialIcons a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255,255,255,0.5);
+}
+
+/* QUOTE */
+.quote {
+  text-align: center;
+  margin-top: 40px;
+
+  color: rgba(255,255,255,0.6);
+
+  letter-spacing: 4px;
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .contentGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .formCard {
+    order: -1; /* Move form to top on tablet/mobile */
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .infoSection {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .socialSection {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .socialIcons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .astronaut {
+    width: 180px;
+  }
+
+  .earth {
+    width: 220px;
+  }
+
+  .mainTitle {
+    font-size: 54px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 30px 20px 60px;
+  }
+
+  .mainTitle {
+    font-size: 32px;
+  }
+
+  .subTitle {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .astronaut {
+    width: 120px;
+    left: -10px;
+    top: 50px;
+  }
+
+  .earth {
+    width: 150px;
+    right: -10px;
+    top: 50px;
+  }
+
+  .signalWrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .signalImage {
+    width: 120%;
+    max-width: none;
+    transform: translateX(-10%);
+  }
+
+  .formCard {
+    padding: 24px;
+    width: 100%;
+  }
+
+  .infoSection h3, .socialSection h3 {
+    font-size: 20px;
+    letter-spacing: 3px;
+  }
+
+  .infoItem {
+    font-size: 15px;
+  }
+
+  .socialIcons a {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}

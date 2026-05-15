@@ -1,0 +1,109 @@
+.card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease,
+    filter 0.5s ease;
+}
+
+.imageWrapper {
+  border-radius: 50%;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: radial-gradient(
+    circle,
+    rgba(120, 90, 255, 0.15),
+    rgba(0, 0, 0, 0.9)
+  );
+
+  box-shadow:
+    0 0 20px rgba(120, 90, 255, 0.25),
+    0 0 45px rgba(120, 90, 255, 0.15),
+    inset 0 0 18px rgba(255, 255, 255, 0.05);
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+/* ACTIVE MEMBER */
+
+.active {
+  z-index: 5;
+  transform: scale(1);
+}
+
+.active .imageWrapper {
+  width: 360px;
+  height: 360px;
+
+  box-shadow:
+    0 0 35px rgba(170, 140, 255, 0.45),
+    0 0 80px rgba(120, 90, 255, 0.25),
+    inset 0 0 25px rgba(255, 255, 255, 0.06);
+}
+
+/* SIDE MEMBERS */
+
+.side {
+  opacity: 0.55;
+  filter: brightness(0.7);
+  transform: scale(0.72);
+}
+
+.side .imageWrapper {
+  width: 220px;
+  height: 220px;
+}
+
+/* HOVER EFFECT */
+
+.card:hover {
+  opacity: 1;
+  filter: brightness(1);
+}
+
+.card:hover .imageWrapper {
+  transform: scale(1.03);
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+  .active .imageWrapper {
+    width: 260px;
+    height: 260px;
+  }
+
+  .side .imageWrapper {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .side {
+    display: none;
+  }
+
+  .active .imageWrapper {
+    width: 220px;
+    height: 220px;
+  }
+}

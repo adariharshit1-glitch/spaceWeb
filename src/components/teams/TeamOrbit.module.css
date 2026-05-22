@@ -1,0 +1,319 @@
+.wrapper {
+  min-height: 100vh;
+  background-image: url("/images/home/file_000000008a2c72099e2b7cea670afcf4.AVIF");
+  background-size: cover;
+  background-position: center;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow: hidden;
+  position: relative;
+
+  padding: 3rem 2rem;
+}
+
+/* BACK BUTTON */
+
+.backButton {
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  transition: opacity 0.3s ease;
+}
+
+.backButton:hover {
+  opacity: 0.7;
+}
+
+/* HEADER */
+
+.header {
+  text-align: center;
+  margin-top: 2rem;
+  z-index: 5;
+}
+
+.header h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  letter-spacing: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+
+  color: #b98cff;
+}
+
+.line {
+  width: 90px;
+  height: 2px;
+
+  margin: 1rem auto 1.8rem;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    #b98cff,
+    transparent
+  );
+
+  box-shadow:
+    0 0 10px rgba(185, 140, 255, 0.8),
+    0 0 30px rgba(185, 140, 255, 0.5);
+}
+
+.header p {
+  color: #d2d2d2;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+/* ORBIT SECTION */
+
+.orbitContainer {
+  width: 100%;
+  max-width: 1400px;
+
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  margin-top: 2rem;
+}
+
+/* CENTER */
+
+.center {
+  z-index: 5;
+  animation: float 5s ease-in-out infinite;
+}
+
+/* SIDES */
+
+.sideLeft,
+.sideRight {
+  position: absolute;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+.sideLeft {
+  left: 18%;
+}
+
+.sideRight {
+  right: 18%;
+}
+
+/* NAV BUTTONS */
+
+.navButton {
+  width: 74px;
+  height: 74px;
+
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  background: rgba(20, 20, 30, 0.75);
+  backdrop-filter: blur(10px);
+
+  color: white;
+  font-size: 3rem;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  z-index: 10;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+
+  box-shadow:
+    0 0 25px rgba(160, 120, 255, 0.18);
+}
+
+.navButton:hover {
+  transform: translateY(-50%) scale(1.08);
+
+  background: rgba(40, 40, 60, 0.9);
+
+  box-shadow:
+    0 0 35px rgba(170, 130, 255, 0.4);
+}
+
+.left {
+  left: 4%;
+}
+
+.right {
+  right: 4%;
+}
+
+/* MEMBER INFO */
+
+.memberInfo {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.memberInfo h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+
+  margin-bottom: 0.7rem;
+}
+
+.memberInfo span {
+  color: #b98cff;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+/* DOTS */
+
+.dots {
+  display: flex;
+  gap: 1rem;
+
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.dot,
+.activeDot {
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+  border: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.dot {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.activeDot {
+  background: #a978ff;
+
+  box-shadow:
+    0 0 15px rgba(169, 120, 255, 0.9);
+
+  transform: scale(1.2);
+}
+
+/* FLOAT ANIMATION */
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .sideLeft {
+    left: 8%;
+  }
+
+  .sideRight {
+    right: 8%;
+  }
+
+  .navButton {
+    width: 60px;
+    height: 60px;
+    font-size: 2.3rem;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .wrapper {
+    padding-top: 6rem;
+  }
+
+  .header h1 {
+    letter-spacing: 8px;
+  }
+
+  .header p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .sideLeft,
+  .sideRight {
+    display: none;
+  }
+
+  .navButton {
+    width: 52px;
+    height: 52px;
+    font-size: 2rem;
+  }
+
+  .left {
+    left: 1rem;
+  }
+
+  .right {
+    right: 1rem;
+  }
+
+  .memberInfo h2 {
+    font-size: 2.2rem;
+  }
+
+  .memberInfo span {
+    font-size: 1.1rem;
+  }
+
+  .dots {
+    margin-top: 2rem;
+  }
+
+  .backButton {
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+}

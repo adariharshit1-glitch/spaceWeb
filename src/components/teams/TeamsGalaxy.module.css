@@ -1,6 +1,8 @@
 .galaxy {
   min-height: 100vh;
-  background: #000;
+  background-image: url("/images/home/file_000000008a2c72099e2b7cea670afcf4.AVIF");
+  background-size: cover;
+  background-position: center;
   overflow: hidden;
   position: relative;
   display: flex;

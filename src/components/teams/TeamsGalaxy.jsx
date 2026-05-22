@@ -12,6 +12,7 @@ const teams = [
 
 export default function TeamsGalaxy() {
   return (
+    
     <section className={styles.galaxy}>
       
       <div className={styles.centerText}>

@@ -1,8 +1,9 @@
 import TeamOrbit from '@/components/teams/TeamOrbit';
 import { teamData } from '@/data/teamData';
 
-export default function TeamPage ({params}){
-    const team = teamData[params.team]
+export default async function TeamPage ({params}){
+    const resolvedParams = await params;
+    const team = teamData[resolvedParams.team]
     if(!team){
         return(
             <div style={{
